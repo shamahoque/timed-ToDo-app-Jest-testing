@@ -1,0 +1,31 @@
+{
+  "name": "timed-ToDo-app-Jest-testing",
+  "description": "5-minute To-Do JS app testing with Jest",
+  "version": "1.0.0",
+  "author": "Shama Hoque",
+  "license": "MIT",
+  "keywords": [
+    "Jest",
+    "JavaScript",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shamahoque/timed-ToDo-app-Jest-testing.git"
+  },
+  "main": "index.html",
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "babel-jest": "*",
+    "browserify": "*",
+    "jest": "*"
+  },
+  "dependencies": {
+    "jquery": "*"
+  },
+  "scripts": {
+    "bundle": "browserify scripts/task-add.js -o bundle.js",
+    "test": "jest --coverage --verbose"
+  }
+}

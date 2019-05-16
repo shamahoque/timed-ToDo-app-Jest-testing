@@ -1,0 +1,59 @@
+.container {
+    margin: auto;
+    width: 300px;
+    padding: 10px 40px;
+    border: 1px solid #ececec;
+    border-radius: 1em;
+}
+input {
+    width: 300px
+}
+ul {
+    padding: 0
+}
+li {
+    list-style: none; 
+}
+li span {
+    padding:4px
+}
+.taskTime {
+    color: green
+}
+input {
+    padding: 8px;
+    font-size: 0.9em;
+}
+.complete {
+    width: 30px;
+    height: 30px;
+    border-radius: 12em;
+    line-height: 20;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative
+}
+.notDone{
+   background-color: lightgrey;
+   content: ''
+}
+.done{
+    background-color: lightgreen;
+}
+.done:after{
+    left: 5;
+    content: '\2713';
+    top: 2;
+    position: absolute;
+    font-size: 2em;
+    line-height: 1;
+    color: #f0f0f0;
+}
+.start {
+    margin-left: 4px
+}
+.taskText {
+    font-size: 1em
+}
