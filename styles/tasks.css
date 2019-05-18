@@ -1,6 +1,7 @@
 .container {
     margin: auto;
     width: 300px;
+    margin-top:40px;
     padding: 10px 40px;
     border: 1px solid #ececec;
     border-radius: 1em;
@@ -51,7 +52,7 @@ input {
     line-height: 1;
     color: #f0f0f0;
 }
-.start {
+.startBtn {
     margin-left: 4px
 }
 .taskText {
