@@ -4,17 +4,6 @@ const $ = require('jquery')
 jest.mock('../scripts/task-done.js')
 jest.useFakeTimers();
 
-beforeAll(() => {
-          // Set up our document body
-          document.body.innerHTML =
-          '<div>' +
-          '  <input id="addTask" type="text" placeholder="Add a task ..."/>' +
-          '  <ul> </ul>' +
-          '</div>';
-
-          require('../scripts/task-add');
-})
-
 beforeEach(()=>{
     $('#addTask').val('hello this is a new task')
     var e = $.Event('keypress');

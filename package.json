@@ -24,8 +24,12 @@
   "dependencies": {
     "jquery": "*"
   },
+  "jest": {
+    "verbose": true,
+    "setupFilesAfterEnv": ["<rootDir>/testSetup.js"]
+  },
   "scripts": {
     "bundle": "browserify scripts/task-add.js -o bundle.js",
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage"
   }
 }

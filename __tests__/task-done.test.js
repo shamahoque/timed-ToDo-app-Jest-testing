@@ -1,18 +1,5 @@
 'use strict';
-const $ = require('jquery');
-jest.useFakeTimers();
-
-beforeAll(() => {
-    // Set up our document body
-    document.body.innerHTML =
-    '<div>' +
-    '  <input id="addTask" type="text" placeholder="Add a task ..."/>' +
-    '  <ul> </ul>' +
-    '</div>';
-
-    require('../scripts/task-add');
-})
-
+const $ = require('jquery')
 beforeEach(()=>{
     $('#addTask').val('hello this is a new task')
     var e = $.Event('keypress');
@@ -33,10 +20,11 @@ it('hides start button when task done', () => {
     expect($('ul li:last-child .startBtn').css('display')).toEqual('none')
 })
 
-it('hides time when task done by click', () => {
+it('hides time when task done', () => {
     $('ul li:last-child .startBtn').click()
-    jest.advanceTimersByTime(60000);
-    $('li:last-child .complete').click()
+    expect($('ul li:last-child .taskTime').length).toEqual(1)
+    expect($('ul li:last-child .taskTime').css('display')).not.toEqual('none')
 
+    $('li:last-child .complete').click()
     expect($('ul li:last-child .taskTime').css('display')).toEqual('none')
 })

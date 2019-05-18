@@ -3,15 +3,6 @@ const $ = require('jquery')
 jest.useFakeTimers()
 describe('displayed count of tasks left', () => {
     beforeAll(() => {
-        // Set up our document body
-        document.body.innerHTML =
-        '<div>' +
-        '  <input id="addTask" type="text" placeholder="Add a task ..."/>' +
-        '  <ul> </ul>' +
-        '  <div><span id="count">0</span> tasks left to do</div>' +
-        '</div>'
-
-        require('../scripts/task-add')
         $('#addTask').val('Task 1')
         var e = $.Event('keypress')
         e.keyCode= 13 // enter
