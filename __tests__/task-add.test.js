@@ -6,7 +6,7 @@ it('does not add task to list if a key other than enter is pressed', () => {
       e.keyCode= 0; // not enter
       $('input').trigger(e);
 
-      expect($('li:last-child .taskText').length).toEqual(0);
+      expect($('li').length).toEqual(0);
 })
 
 it('displays a task at the end of the list on enter key press in input', () => {
