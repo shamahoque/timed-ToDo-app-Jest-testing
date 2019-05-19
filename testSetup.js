@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 beforeAll(() => {
     // Set up our document body
@@ -9,5 +9,5 @@ beforeAll(() => {
         '  <div><span id="count">0</span> tasks left to do</div>' +
         '</div>'
 
-      require('./scripts/task-add');
+      require('./scripts/task-add')
 })

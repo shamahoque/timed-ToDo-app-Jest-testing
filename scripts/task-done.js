@@ -1,5 +1,5 @@
-const $ = require('jquery');
-const updateCount = require('./task-count.js');
+const $ = require('jquery')
+const updateCount = require('./task-count.js')
 
 function doneTask(task){
     $('.complete', task).toggleClass('notDone done')
@@ -9,4 +9,4 @@ function doneTask(task){
     updateCount()
 }
 
-module.exports = doneTask;
+module.exports = doneTask

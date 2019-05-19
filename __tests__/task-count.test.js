@@ -12,10 +12,10 @@ describe('displayed count of tasks left', () => {
     it('increments when new task added', () => {
         $('#addTask').val('Task 2')
         var e = $.Event('keypress')
-        e.keyCode= 13; // enter
-        $('input').trigger(e);
+        e.keyCode= 13 // enter
+        $('input').trigger(e)
 
-        expect($('#count').text()).toEqual("2");
+        expect($('#count').text()).toEqual("2")
     })
 
     it('decrements when a task is done', () => {

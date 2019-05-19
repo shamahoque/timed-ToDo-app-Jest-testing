@@ -10599,23 +10599,22 @@ return jQuery;
 } );
 
 },{}],2:[function(require,module,exports){
-const $ = require('jquery');
-const updateCount = require('./task-count.js');
-const doneTask = require('./task-done.js');
-const startTask = require('./task-timer.js');
+const $ = require('jquery')
+const updateCount = require('./task-count.js')
+const doneTask = require('./task-done.js')
+const startTask = require('./task-timer.js')
 
 $('#addTask').keypress(function(e){
     if(e.keyCode == 13){
-        var newTask = $('<li>');
+        let newTask = $('<li>')
+        let taskDesc = $('<span class="taskText">').text($('#addTask').val())
         
-        var taskDesc = $('<span class="taskText">').text($('#addTask').val())
-        
-        var startBtn = $('<button class="startBtn">Start</button>')   
+        let startBtn = $('<button class="startBtn">Start</button>')   
         startBtn.click(function(event){
             startTask(newTask)
         })
         
-        var doneBtn = $('<button class="complete notDone"></button>') 
+        let doneBtn = $('<button class="complete notDone"></button>') 
         doneBtn.click(function(event){
             doneTask(newTask)
         })
@@ -10625,24 +10624,21 @@ $('#addTask').keypress(function(e){
         newTask.append(startBtn)
         $('ul').append(newTask)
         
-        $('#addTask').val('')      
-            
+        $('#addTask').val('')          
         updateCount()
     }
 })
-
-
 },{"./task-count.js":3,"./task-done.js":4,"./task-timer.js":5,"jquery":1}],3:[function(require,module,exports){
-const $ = require('jquery');
+const $ = require('jquery')
 
 function updateCount(){
     $('#count').text($('.notDone').length)
 }
 
-module.exports = updateCount;
+module.exports = updateCount
 },{"jquery":1}],4:[function(require,module,exports){
-const $ = require('jquery');
-const updateCount = require('./task-count.js');
+const $ = require('jquery')
+const updateCount = require('./task-count.js')
 
 function doneTask(task){
     $('.complete', task).toggleClass('notDone done')
@@ -10652,10 +10648,10 @@ function doneTask(task){
     updateCount()
 }
 
-module.exports = doneTask;
+module.exports = doneTask
 },{"./task-count.js":3,"jquery":1}],5:[function(require,module,exports){
-const $ = require('jquery');
-const doneTask = require('./task-done.js');
+const $ = require('jquery')
+const doneTask = require('./task-done.js')
 
 function startTask(task){
     $('.startBtn', task).hide()
@@ -10665,23 +10661,22 @@ function startTask(task){
 }
 
 function startTimer(task){
-    var timer = 5*60, minutes, seconds;
+    var timer = 5*60, minutes, seconds
     var timeInt = setInterval(function () {
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10)
             
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            seconds = seconds < 10 ? "0" + seconds : seconds
 
-            $('.taskTime',task).text(minutes + ":" + seconds);
+            $('.taskTime',task).text(minutes + ":" + seconds)
 
             if (--timer < 0) {
                 clearInterval(timeInt)
                 doneTask(task)
             }
-        }, 1000);
+        }, 1000)
 }
 
 module.exports = startTask
-
 },{"./task-done.js":4,"jquery":1}]},{},[2]);

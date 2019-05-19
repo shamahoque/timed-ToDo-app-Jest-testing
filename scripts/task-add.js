@@ -1,11 +1,11 @@
-const $ = require('jquery');
-const updateCount = require('./task-count.js');
-const doneTask = require('./task-done.js');
-const startTask = require('./task-timer.js');
+const $ = require('jquery')
+const updateCount = require('./task-count.js')
+const doneTask = require('./task-done.js')
+const startTask = require('./task-timer.js')
 
 $('#addTask').keypress(function(e){
     if(e.keyCode == 13){
-        let newTask = $('<li>');
+        let newTask = $('<li>')
         let taskDesc = $('<span class="taskText">').text($('#addTask').val())
         
         let startBtn = $('<button class="startBtn">Start</button>')   
